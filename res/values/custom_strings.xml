@@ -114,4 +114,6 @@
     <string name="charging_control_target_time_summary">Battery will be fully charged by %s</string>
     <string name="charging_control_limit_title">Limit</string>
     <string name="reset">Reset</string>
+
+    <string name="usercard_summary">Current active user, tap for more information</string>
 </resources>
