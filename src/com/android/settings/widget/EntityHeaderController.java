@@ -43,7 +43,10 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.overlay.FeatureFactory;
 import com.android.settingslib.applications.ApplicationsState;
+import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.widget.LayoutPreference;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -68,6 +71,8 @@ public class EntityHeaderController {
     private final Fragment mFragment;
     private final int mMetricsCategory;
     private final View mHeader;
+    private RecyclerView mRecyclerView;
+    private Lifecycle mLifecycle;
     private Drawable mIcon;
     private int mPrefOrder = -1000;
     private String mIconContentDescription;
@@ -113,6 +118,12 @@ public class EntityHeaderController {
                     .inflate(com.android.settingslib.widget.preference.layout.R.layout.settings_entity_header,
                             null /* root */);
         }
+    }
+
+    public EntityHeaderController setRecyclerView(RecyclerView recyclerView, Lifecycle lifecycle) {
+        mRecyclerView = recyclerView;
+        mLifecycle = lifecycle;
+        return this;
     }
 
     /**
